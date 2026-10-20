@@ -3,9 +3,11 @@
 
 # Contact details shown on every page. security.txt expiry date is set in build.py.
 CONTACT = {
-    "phone": "+7 777 199 17 99",
-    "phone_href": "+77771991799",
-    "whatsapp": "https://wa.me/77771991799",
+    "phone": "+7 702 476 56 37",          # main number (Yermek), shown first
+    "phone_href": "+77024765637",
+    "whatsapp": "https://wa.me/77024765637",
+    "phone2": "+7 777 199 17 99",         # second number
+    "phone2_href": "+77771991799",
     "email": "aqbalyq2022@gmail.com",
     "site_url": "https://aqbalyq-export.netlify.app",  # must match the final Netlify name or domain
 }
