@@ -36,7 +36,7 @@ T = {}
 T["en"] = dict(
     html_lang="en", path="/", thanks_path="/thanks/", num_sep=",",
     meta_title="Aq Balyq | Wild zander and perch fillets from Kazakhstan",
-    meta_desc="Frozen IQF fillets of wild pike-perch (zander), perch and pike from the Aral Sea basin, Lake Balkhash and Lake Zaysan. EU-approved plant KZ N.01/G2-1622/E. Full reefer trucks to Europe.",
+    meta_desc="Frozen IQF fillets of wild pike-perch (zander), perch and pike from the Aral Sea basin, Lake Balkhash and Lake Zaysan. EU-approved plant. Full reefer trucks to Europe.",
     skip="Skip to content",
     nav=[("products", "Products"), ("grades", "Size grades"), ("process", "Process"), ("quality", "Quality"), ("logistics", "Logistics"), ("contact", "Contact")],
     menu="Menu",
@@ -46,7 +46,7 @@ T["en"] = dict(
     hero_sub="Aq Balyq is a family fish business from Kazakhstan. We supply frozen fillets of wild freshwater fish to importers, wholesalers and foodservice distributors, by the full reefer truck.",
     video_label="Pike-perch fillets on the processing line in Aralsk",
     label_title="Frozen pike-perch fillet",
-    label_rows=[("Species", "Sander lucioperca"), ("Catch", "Wild, seine nets"), ("Plant", "EU approval KZ N.01/G2-1622/E"), ("Carton", "5 kg, 4.5 kg net fish"), ("Shelf life", "24 months")],
+    label_rows=[("Species", "Sander lucioperca"), ("Catch", "Wild, seine nets"), ("Plant", "EU-approved, Aralsk"), ("Carton", "5 kg, 4.5 kg net fish"), ("Shelf life", "24 months")],
     label_foot="Keep frozen at −18 °C or colder",
 
     about_h="A producer, not a trader",
@@ -85,7 +85,7 @@ T["en"] = dict(
 
     quality_h="Documents your border inspection will ask for",
     quality=[
-        ("EU-approved plant", "LLP Karashalan Balyk, approval No. KZ N.01/G2-1622/E. Cold store approval No. KZ N.01/W2-1875/E."),
+        ("EU-approved plant", "LLP Karashalan Balyk in Aralsk is on the EU list of approved establishments, together with its cold store. Approval numbers are provided to buyers on request."),
         ("Certificates with every truck", "EU health certificate, veterinary certificate and a full set of customs documents."),
         ("Nothing added", "No phosphates, polyphosphates or water-retaining agents. Glaze tolerance +2% / −0% of the declared level."),
         ("Fixed net weight", "4.5 kg of fish in every carton. Only the glaze layer varies, never the fish."),
@@ -127,7 +127,7 @@ T["en"] = dict(
 T["ru"] = dict(
     html_lang="ru", path="/ru/", thanks_path="/ru/thanks/", num_sep=" ",
     meta_title="Aq Balyq | Филе дикого судака и окуня из Казахстана",
-    meta_desc="Замороженное филе IQF дикого судака, окуня и щуки из бассейна Аральского моря, озёр Балхаш и Зайсан. Завод с евроодобрением KZ N.01/G2-1622/E. Полные рефрижераторы в Европу.",
+    meta_desc="Замороженное филе IQF дикого судака, окуня и щуки из бассейна Аральского моря, озёр Балхаш и Зайсан. Завод с евроодобрением. Полные рефрижераторы в Европу.",
     skip="Перейти к содержанию",
     nav=[("products", "Продукция"), ("grades", "Калибры"), ("process", "Производство"), ("quality", "Качество"), ("logistics", "Логистика"), ("contact", "Контакты")],
     menu="Меню",
@@ -137,7 +137,7 @@ T["ru"] = dict(
     hero_sub="Aq Balyq: семейный рыбный бизнес из Казахстана. Мы поставляем замороженное филе дикой пресноводной рыбы импортёрам, оптовикам и дистрибьюторам HoReCa полными рефрижераторами.",
     video_label="Филе судака на линии переработки в Аральске",
     label_title="Филе судака мороженое",
-    label_rows=[("Вид", "Sander lucioperca"), ("Вылов", "Дикий, неводом"), ("Завод", "Евроодобрение KZ N.01/G2-1622/E"), ("Короб", "5 кг, 4,5 кг рыбы нетто"), ("Срок годности", "24 месяца")],
+    label_rows=[("Вид", "Sander lucioperca"), ("Вылов", "Дикий, неводом"), ("Завод", "С евроодобрением, Аральск"), ("Короб", "5 кг, 4,5 кг рыбы нетто"), ("Срок годности", "24 месяца")],
     label_foot="Хранить при −18 °C и ниже",
 
     about_h="Мы производитель, а не перекупщик",
@@ -176,7 +176,7 @@ T["ru"] = dict(
 
     quality_h="Документы, которые спросят на границе",
     quality=[
-        ("Завод с евроодобрением", "ТОО «Карашалан Балык», номер одобрения KZ N.01/G2-1622/E. Холодильник: KZ N.01/W2-1875/E."),
+        ("Завод с евроодобрением", "ТОО «Карашалан Балык» в Аральске входит в список предприятий, одобренных ЕС, вместе со своим холодильником. Номера одобрения предоставляются покупателям по запросу."),
         ("Сертификаты с каждой фурой", "Ветеринарный сертификат ЕС, ветеринарное свидетельство и полный пакет таможенных документов."),
         ("Без добавок", "Без фосфатов, полифосфатов и влагоудерживающих агентов. Допуск по глазури +2% / −0% от заявленного уровня."),
         ("Фиксированный вес нетто", "4,5 кг рыбы в каждом коробе. Меняется только слой глазури, а не количество рыбы."),
@@ -218,7 +218,7 @@ T["ru"] = dict(
 T["kz"] = dict(
     html_lang="kk", path="/kz/", thanks_path="/kz/thanks/", num_sep=" ",
     meta_title="Aq Balyq | Қазақстандық жабайы көксерке мен алабұға филесі",
-    meta_desc="Арал теңізі алабы, Балқаш және Зайсан көлдерінен ауланған жабайы көксерке, алабұға және шортанның мұздатылған IQF филесі. ЕО мақұлдаған зауыт KZ N.01/G2-1622/E. Еуропаға толық рефрижераторлармен жеткізу.",
+    meta_desc="Арал теңізі алабы, Балқаш және Зайсан көлдерінен ауланған жабайы көксерке, алабұға және шортанның мұздатылған IQF филесі. ЕО мақұлдаған зауыт. Еуропаға толық рефрижераторлармен жеткізу.",
     skip="Мазмұнға өту",
     nav=[("products", "Өнімдер"), ("grades", "Калибрлер"), ("process", "Өндіріс"), ("quality", "Сапа"), ("logistics", "Логистика"), ("contact", "Байланыс")],
     menu="Мәзір",
@@ -228,7 +228,7 @@ T["kz"] = dict(
     hero_sub="Aq Balyq: Қазақстандағы отбасылық балық кәсібі. Біз жабайы тұщы су балығының мұздатылған филесін импорттаушыларға, көтерме саудагерлерге және HoReCa дистрибьюторларына толық рефрижераторлармен жеткіземіз.",
     video_label="Арал қаласындағы өңдеу желісіндегі көксерке филесі",
     label_title="Мұздатылған көксерке филесі",
-    label_rows=[("Түрі", "Sander lucioperca"), ("Аулау", "Жабайы, ау-сүзекі"), ("Зауыт", "ЕО мақұлдауы KZ N.01/G2-1622/E"), ("Қорап", "5 кг, таза балық 4,5 кг"), ("Сақтау мерзімі", "24 ай")],
+    label_rows=[("Түрі", "Sander lucioperca"), ("Аулау", "Жабайы, ау-сүзекі"), ("Зауыт", "ЕО мақұлдаған, Арал"), ("Қорап", "5 кг, таза балық 4,5 кг"), ("Сақтау мерзімі", "24 ай")],
     label_foot="−18 °C және одан төмен температурада сақтаңыз",
 
     about_h="Біз делдал емес, өндірушіміз",
@@ -267,7 +267,7 @@ T["kz"] = dict(
 
     quality_h="Шекарада сұралатын құжаттар",
     quality=[
-        ("ЕО мақұлдаған зауыт", "«Қарашалаң Балық» ЖШС, мақұлдау нөмірі KZ N.01/G2-1622/E. Тоңазытқыш қойма: KZ N.01/W2-1875/E."),
+        ("ЕО мақұлдаған зауыт", "Арал қаласындағы «Қарашалаң Балық» ЖШС тоңазытқыш қоймасымен бірге ЕО мақұлдаған кәсіпорындар тізімінде бар. Мақұлдау нөмірлері сатып алушыларға сұрау бойынша беріледі."),
         ("Әр фурамен сертификаттар", "ЕО ветеринарлық сертификаты, ветеринарлық куәлік және кедендік құжаттардың толық топтамасы."),
         ("Қоспасыз", "Фосфаттар, полифосфаттар және ылғал ұстағыш заттар қолданылмайды. Глазурь бойынша рұқсат +2% / −0%."),
         ("Тұрақты таза салмақ", "Әр қорапта 4,5 кг балық. Тек глазурь қабаты өзгереді, балық мөлшері өзгермейді."),

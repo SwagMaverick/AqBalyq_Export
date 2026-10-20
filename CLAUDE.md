@@ -9,3 +9,4 @@
 - Never commit business documents, passports, contracts, invoices, price lists or buyer names. Media must have metadata stripped.
 - `site_url` in `content.py` must match the live address; change it if the domain changes. Do not point a `.kz` domain at Netlify (.kz hosting must be in Kazakhstan).
 - `security.txt` expiry is set one year from build; rebuild at least yearly.
+- Do not publish the plant's EU approval or cold store numbers anywhere on the site (text, meta tags, images, structured data). They are given to buyers only on request.
