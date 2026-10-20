@@ -8,6 +8,8 @@ CONTACT = {
     "whatsapp": "https://wa.me/77024765637",
     "phone2": "+7 777 199 17 99",         # second number
     "phone2_href": "+77771991799",
+    "phone3": "+7 701 722 89 44",         # third number (director)
+    "phone3_href": "+77017228944",
     "email": "aqbalyq2022@gmail.com",
     "site_url": "https://aqbalyq-export.netlify.app",  # must match the final Netlify name or domain
 }
@@ -89,7 +91,6 @@ T["en"] = dict(
         ("Fixed net weight", "4.5 kg of fish in every carton. Only the glaze layer varies, never the fish."),
         ("Packaging for EU rules", "EAEU declarations of conformity for the bags and cartons. PPWR packaging information on request."),
     ],
-    verify_link="Check the EU list of approved establishments",
     docs_note="Product specification, carton label and a sample health certificate are available on request.",
     docs_cta="Ask for the document pack",
 
@@ -181,7 +182,6 @@ T["ru"] = dict(
         ("Фиксированный вес нетто", "4,5 кг рыбы в каждом коробе. Меняется только слой глазури, а не количество рыбы."),
         ("Упаковка по правилам ЕС", "Декларации соответствия ЕАЭС на пакеты и короба. Информация по PPWR по запросу."),
     ],
-    verify_link="Проверить в списке одобренных предприятий ЕС",
     docs_note="Спецификация, образец этикетки и образец ветеринарного сертификата доступны по запросу.",
     docs_cta="Запросить пакет документов",
 
@@ -273,7 +273,6 @@ T["kz"] = dict(
         ("Тұрақты таза салмақ", "Әр қорапта 4,5 кг балық. Тек глазурь қабаты өзгереді, балық мөлшері өзгермейді."),
         ("ЕО ережелеріне сай қаптама", "Пакеттер мен қораптарға ЕАЭО сәйкестік декларациялары. PPWR бойынша ақпарат сұрау бойынша беріледі."),
     ],
-    verify_link="ЕО мақұлдаған кәсіпорындар тізімінен тексеру",
     docs_note="Спецификация, заттаңба үлгісі және ветеринарлық сертификат үлгісі сұрау бойынша беріледі.",
     docs_cta="Құжаттар топтамасын сұрау",
 

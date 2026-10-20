@@ -125,9 +125,6 @@ section{padding:clamp(56px, 8vw, 104px) 0}
 
 /* quality */
 .quality{background:var(--paper)}
-.approval{margin-top:24px;padding:22px 22px 18px;border:2px solid var(--aral);border-radius:var(--r);background:var(--ice)}
-.approval-no{display:block;font:500 clamp(1.15rem, .9rem + 1.1vw, 1.6rem)/1.2 var(--display);color:var(--lake);letter-spacing:.01em;margin-bottom:10px;word-break:break-word}
-.approval a{font-weight:600;font-size:.95rem}
 .qlist{margin:0}
 .qlist div{padding:16px 0;border-bottom:1px solid var(--line)}
 .qlist div:first-child{padding-top:4px}
