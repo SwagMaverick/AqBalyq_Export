@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="{{ t.html_lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} | Aq Balyq</title>
+{% if noindex %}<meta name="robots" content="noindex">{% endif %}
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<link rel="stylesheet" href="/assets/fonts.css?v={{ v }}">
+<link rel="stylesheet" href="/assets/style.css?v={{ v }}">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="{{ t.path }}" aria-label="Aq Balyq">
+      <img src="/assets/img/mark.png" alt="" width="40" height="33">
+      <span>Aq Balyq</span>
+    </a>
+    <div class="head-tools">
+      <div class="langs" role="list">
+        {% for code, lt in langs.items() %}<a role="listitem" href="{{ lt[page_key] if page_key else lt.path }}" hreflang="{{ lt.html_lang }}" {% if code == lang %}aria-current="page"{% endif %}>{{ t.lang_names[code] }}</a>{% endfor %}
+      </div>
+    </div>
+  </div>
+</header>
+<main class="legal">
+{% if kind == 'privacy' %}
+  <h1>{{ t.privacy_title }}</h1>
+  <p class="meta">{{ t.privacy_updated }}: {{ updated }}</p>
+  {% for h, body in t.privacy %}
+  <h2>{{ h }}</h2>
+  <p>{{ body.replace('{email}', c.email) }}</p>
+  {% endfor %}
+  <p><a href="{{ t.path }}">{{ t.thanks_back }}</a></p>
+{% else %}
+  {% for code, lt in langs.items() %}
+  {% if loop.first %}<h1 lang="{{ lt.html_lang }}">{{ lt.nf_title }}</h1>{% else %}<h2 lang="{{ lt.html_lang }}">{{ lt.nf_title }}</h2>{% endif %}
+  <p lang="{{ lt.html_lang }}">{{ lt.nf_p }} <a href="{{ lt.path }}">Aq Balyq</a></p>
+  {% endfor %}
+{% endif %}
+</main>
+<footer class="site-foot">
+  <div class="wrap foot-row">
+    <img src="/assets/img/mark-white.png" alt="" width="36" height="30">
+    <p>© {{ year }} {{ t.footer_note }}</p>
+  </div>
+</footer>
+</body>
+</html>

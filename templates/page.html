@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="{{ t.html_lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ t.meta_title }}</title>
+<meta name="description" content="{{ t.meta_desc }}">
+<link rel="canonical" href="{{ c.site_url }}{{ t.path }}">
+{% for code, lt in langs.items() %}<link rel="alternate" hreflang="{{ lt.html_lang }}" href="{{ c.site_url }}{{ lt.path }}">
+{% endfor %}<link rel="alternate" hreflang="x-default" href="{{ c.site_url }}/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ t.meta_title }}">
+<meta property="og:description" content="{{ t.meta_desc }}">
+<meta property="og:url" content="{{ c.site_url }}{{ t.path }}">
+<meta property="og:image" content="{{ c.site_url }}/assets/img/og-cover.jpg">
+<meta name="theme-color" content="#0F2C38">
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<link rel="stylesheet" href="/assets/fonts.css?v={{ v }}">
+<link rel="stylesheet" href="/assets/style.css?v={{ v }}">
+<script type="application/ld+json">{{ jsonld|safe }}</script>
+</head>
+<body>
+<a class="skip" href="#main">{{ t.skip }}</a>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="{{ t.path }}" aria-label="Aq Balyq">
+      <img src="/assets/img/mark.png" alt="" width="40" height="33">
+      <span>Aq Balyq</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      {% for id, label in t.nav %}<a href="#{{ id }}">{{ label }}</a>{% endfor %}
+    </nav>
+    <div class="head-tools">
+      <div class="langs" role="list">
+        {% for code, lt in langs.items() %}<a role="listitem" href="{{ lt.path }}" hreflang="{{ lt.html_lang }}" {% if code == lang %}aria-current="page"{% endif %}>{{ t.lang_names[code] }}</a>{% endfor %}
+      </div>
+      <a class="btn btn-small" href="#contact">{{ t.cta_offer }}</a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="nav">{{ t.menu }}</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <h1>{{ t.hero_h1 }}</h1>
+      <p class="lede">{{ t.hero_sub }}</p>
+      <div class="actions">
+        <a class="btn" href="#contact">{{ t.cta_offer }}</a>
+        <a class="btn btn-ghost" href="#products">{{ t.cta_products }}</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <video class="hero-video" src="/assets/video/hero.mp4" poster="/assets/img/hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="{{ t.video_label }}"></video>
+      <button class="vid-toggle" type="button" data-target="hero" data-pause="{{ t.pause_video }}" data-play="{{ t.play_video }}">{{ t.pause_video }}</button>
+      <div class="carton-label" aria-label="{{ t.label_title }}">
+        <div class="cl-head">
+          <img src="/assets/img/mark.png" alt="" width="28" height="23">
+          <strong>{{ t.label_title }}</strong>
+        </div>
+        <dl>
+          {% for k, val in t.label_rows %}<div><dt>{{ k }}</dt><dd>{{ val }}</dd></div>{% endfor %}
+        </dl>
+        <p class="cl-foot">{{ t.label_foot }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap two-col">
+    <h2>{{ t.about_h }}</h2>
+    <div>
+      {% for p in t.about_p %}<p>{{ p }}</p>{% endfor %}
+      <dl class="facts">
+        {% for k, val in t.about_facts %}<div><dt>{{ k }}</dt><dd>{{ val }}</dd></div>{% endfor %}
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="products" class="products">
+  <div class="wrap">
+    <h2>{{ t.products_h }}</h2>
+    <p class="intro">{{ t.products_intro }}</p>
+    <div class="table-wrap">
+      <table class="ptable">
+        <thead><tr>{% for col in t.products_cols %}<th scope="col">{{ col }}</th>{% endfor %}</tr></thead>
+        <tbody>
+          {% for name, latin, fmt, grades, main in t.products %}
+          <tr{% if main %} class="main"{% endif %}>
+            <th scope="row" data-label="{{ t.products_cols[0] }}">{{ name }}</th>
+            <td data-label="{{ t.products_cols[1] }}"><i>{{ latin }}</i></td>
+            <td data-label="{{ t.products_cols[2] }}">{{ fmt }}</td>
+            <td data-label="{{ t.products_cols[3] }}">{{ grades }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="ruler">
+      <p class="ruler-title">{{ t.grades_title }}</p>
+      <ol class="ruler-scale">
+        {% for gr in grades %}<li><span>{{ gr }}</span></li>{% endfor %}
+      </ol>
+      <p class="note">{{ t.grades_note }}</p>
+    </div>
+  </div>
+</section>
+
+<section id="grades" class="grades">
+  <div class="wrap">
+    <h2>{{ t.grades_h }}</h2>
+    <p class="intro">{{ t.grades_p }}</p>
+  </div>
+  <div class="strip" tabindex="0" aria-label="{{ t.scroll_hint }}">
+    {% for file, kind, w, side in photos %}
+    <figure>
+      <img src="/assets/img/{{ file }}.jpg" width="600" height="800" loading="lazy"
+           alt="{{ t.ph_skinless if kind == 'skinless' else t.ph_skinon }}, {{ w }} {{ t.g }}{% if side %}, {{ t.ph_skin if side == 'skin' else t.ph_flesh }}{% endif %}">
+      <figcaption><b>{{ w }}<small>{{ t.g }}</small></b><span>{{ t.ph_skinless if kind == 'skinless' else t.ph_skinon }}{% if side %}, {{ t.ph_skin if side == 'skin' else t.ph_flesh }}{% endif %}</span></figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+  <p class="wrap scroll-hint">{{ t.scroll_hint }}</p>
+</section>
+
+<section id="process" class="process">
+  <div class="wrap">
+    <div class="process-head">
+      <h2>{{ t.process_h }}</h2>
+      <button class="vid-toggle vid-toggle-inline" type="button" data-target="clips" data-pause="{{ t.pause_clips }}" data-play="{{ t.play_clips }}">{{ t.pause_clips }}</button>
+    </div>
+    <ol class="steps">
+      {% for title, body in t.steps %}
+      <li>
+        <video class="clip" src="/assets/video/{{ steps_media[loop.index0] }}.mp4" poster="/assets/img/{{ steps_media[loop.index0] }}.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+        <div class="step-text">
+          <span class="step-n">{{ loop.index }}</span>
+          <h3>{{ title }}</h3>
+          <p>{{ body }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section id="quality" class="quality">
+  <div class="wrap two-col">
+    <div>
+      <h2>{{ t.quality_h }}</h2>
+      <div class="approval">
+        <span class="approval-no">KZ N.01/G2-1622/E</span>
+        <a href="https://webgate.ec.europa.eu/tracesnt/directory/publication/establishment/index" target="_blank" rel="noopener noreferrer">{{ t.verify_link }}</a>
+      </div>
+    </div>
+    <div>
+      <dl class="qlist">
+        {% for k, val in t.quality %}<div><dt>{{ k }}</dt><dd>{{ val }}</dd></div>{% endfor %}
+      </dl>
+      <p class="docs">{{ t.docs_note }} <a href="#contact">{{ t.docs_cta }}</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="logistics" class="logistics">
+  <div class="wrap">
+    <h2>{{ t.logistics_h }}</h2>
+    <div class="truck">
+      {% for k, big, small in t.truck %}
+      {% if not loop.first %}<span class="times" aria-hidden="true">{{ t.times }}</span>{% endif %}
+      <div class="unit unit-{{ loop.index }}">
+        <span class="unit-k">{{ k }}</span>
+        <span class="unit-big">{{ big }}</span>
+        <span class="unit-small">{{ small }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    <dl class="terms">
+      {% for k, val in t.terms %}<div><dt>{{ k }}</dt><dd>{{ val }}</dd></div>{% endfor %}
+    </dl>
+  </div>
+</section>
+
+<section class="partners">
+  <div class="wrap two-col">
+    <h2>{{ t.partners_h }}</h2>
+    <div>
+      <ul class="plist">{% for p in t.partners %}<li>{{ p }}</li>{% endfor %}</ul>
+      <p>{{ t.partners_p }}</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-form">
+      <h2>{{ t.contact_h }}</h2>
+      <p class="intro">{{ t.contact_p }}</p>
+      <form name="inquiry" method="POST" action="{{ t.thanks_path }}" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="inquiry">
+        <input type="hidden" name="language" value="{{ lang }}">
+        <p class="hp"><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div class="fgrid">
+          <label>{{ t.f_name }}<input name="name" required maxlength="100" autocomplete="name"></label>
+          <label>{{ t.f_company }}<input name="company" required maxlength="150" autocomplete="organization"></label>
+          <label>{{ t.f_country }}<input name="country" required maxlength="80" autocomplete="country-name"></label>
+          <label>{{ t.f_email }}<input type="email" name="email" required maxlength="150" autocomplete="email"></label>
+          <label class="span2"><span>{{ t.f_phone }} <em>({{ t.f_optional }})</em></span><input type="tel" name="phone" maxlength="40" autocomplete="tel"></label>
+        </div>
+        <fieldset>
+          <legend>{{ t.f_products }}</legend>
+          <div class="checks">
+            {% for o in t.f_products_opts %}<label class="check"><input type="checkbox" name="products[]" value="{{ o }}"> {{ o }}</label>{% endfor %}
+          </div>
+        </fieldset>
+        <label>{{ t.f_volume }}
+          <select name="volume">{% for o in t.f_volume_opts %}<option>{{ o }}</option>{% endfor %}</select>
+        </label>
+        <label>{{ t.f_msg }}<textarea name="message" rows="4" maxlength="2000"></textarea></label>
+        <label class="check consent"><input type="checkbox" name="consent" value="yes" required> <span>{{ t.f_consent_a }}<a href="{{ t.privacy_path }}" target="_blank">{{ t.f_consent_b }}</a>.</span></label>
+        <button class="btn" type="submit">{{ t.f_send }}</button>
+        <p class="small">{{ t.f_privacy }}</p>
+      </form>
+    </div>
+    <aside class="direct">
+      <h3>{{ t.direct_h }}</h3>
+      <p class="person">{{ t.contact_person }}</p>
+      <ul class="clinks">
+        <li><span>WhatsApp</span><a href="{{ c.whatsapp }}" target="_blank" rel="noopener noreferrer">{{ c.phone }}</a></li>
+        <li><span>Email</span><a href="mailto:{{ c.email }}">{{ c.email }}</a></li>
+        <li><span>Tel.</span><a href="tel:{{ c.phone_href }}">{{ c.phone }}</a></li>
+      </ul>
+      <div class="fraud">
+        <h4>{{ t.fraud_h }}</h4>
+        <p>{{ t.fraud_p }}</p>
+      </div>
+      <dl class="entities">
+        <div><dt>{{ t.rep_label }}</dt><dd>{{ t.rep }}</dd></div>
+        <div><dt>{{ t.producer_label }}</dt><dd>{{ t.producer }}</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-row">
+    <img src="/assets/img/mark-white.png" alt="" width="36" height="30">
+    <p>© {{ year }} {{ t.footer_note }} <a href="{{ t.privacy_path }}">{{ t.privacy_link }}</a></p>
+    <div class="langs">{% for code, lt in langs.items() %}<a href="{{ lt.path }}" hreflang="{{ lt.html_lang }}" {% if code == lang %}aria-current="page"{% endif %}>{{ t.lang_names[code] }}</a>{% endfor %}</div>
+  </div>
+</footer>
+
+<script src="/assets/main.js?v={{ v }}" defer></script>
+</body>
+</html>
